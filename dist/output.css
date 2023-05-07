@@ -732,6 +732,10 @@ select{
   top: 0.5rem;
 }
 
+.-left-\[100\%\]{
+  left: -100%;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -867,6 +871,10 @@ select{
 
 .w-\[70\%\]{
   width: 70%;
+}
+
+.w-\[80\%\]{
+  width: 80%;
 }
 
 .-translate-x-1\/2{
