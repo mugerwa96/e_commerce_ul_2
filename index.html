@@ -26,26 +26,26 @@
 
   <!-- top__nav__container -->
 
-  <div class="p-2 z-20">
+  <div class="p-2 z-20 md:max-w-5xl mx-auto ">
 
     <!-- flex__container -->
-    <div class="flex items-center  justify-between">
+    <div class="flex items-center  justify-between  ">
 
       <!-- left__side -->
-      <div class="w-1/2">
-        <h1 class="font-bold"><span class="text-primary">RAF </span>CART</h1>
+      <div class="w-1/2 md:w-[20%] ">
+        <h1 class="font-bold md:text-xl"><span class="text-primary">RAF </span>CART</h1>
       </div>
 
       <!-- middlie__side -->
-      <div class="relative flex ">
+      <div class="relative flex md:w-[50%]  ">
         <input type="text" name=""
-          class="px-5 py-1 w-[60%] border border-r-none border-primary focus:outline-none focus:ring-0 placeholder:text-xs"
+          class="px-5 py-1 md:py-2 w-[60%] md:full border border-r-none border-primary focus:outline-none focus:ring-0 placeholder:text-xs md:w-full"
           placeholder="Enter your search" id="">
         <button
-          class="bg-primary text-white border border-primary px-4 py-1 rounded-r -ml-1 hover:bg-transparent hover:text-primary text-sm">Search</button>
-        <span class="absolute top-2 left-1">
+          class="bg-primary text-white border border-primary px-4 py-1 md:py-2 rounded-r -ml-1 hover:bg-transparent hover:text-primary text-sm">Search</button>
+        <span class="absolute top-2 left-1 md:top-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-4 h-4">
+            stroke="currentColor" class="w-4 h-4 ">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
@@ -55,7 +55,7 @@
       </div>
 
       <!-- right__side -->
-      <div class="hidden md:flex items-center space-x-2">
+      <div class="hidden md:w-[30%] md:flex items-center justify-center  space-x-4">
 
 
         <!-- wishlist -->
@@ -133,32 +133,31 @@
 
 
       </div>
+
     </div>
   </div>
   <!-- end_top__nav__container -->
 
 
   <!-- navigation__bar -->
-  <div class="z-50 bg-slate-800 text-white">
+  <div class="z-50 bg-slate-800 text-white ">
 
     <!-- flex__container -->
-    <div class="px-2 flex items-center justify-between">
+    <div class="px-2 flex items-center justify-between md:max-w-5xl mx-auto ">
 
       <!-- left__side -->
-      <div class="relative">
-        <button @click="isCategoriesOpen=!isCategoriesOpen" @click.away="isCategoriesOpen=false" class="btn-primary">
+      <div class="relative md:w-[30%]">
+        <button  @click="isCategoriesOpen=!isCategoriesOpen" @click.away="isCategoriesOpen=false"  class="btn-primary">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-5 h-5">
+              stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
             </svg>
 
 
           </span>
-          <span class="text-xs">All Categories</span>
-
-
-        </button>
+          <span class="text-xs md:text-base">All Categories</span>
+      </button>
         <!-- all__categories -->
         <div class="z-10 absolute top-10 bg-white shadow" x-show="isCategoriesOpen" x-transition>
           <ul class="p-3">
@@ -170,10 +169,10 @@
         <!-- all__categories -->
       </div>
 
-
-
       <!-- right__side -->
-      <div>
+      <div class="md:w-full space-x-4 ">
+
+
         <!-- mobile__humberg -->
         <div class="md:hidden">
           <span>
@@ -200,13 +199,45 @@
           </span>
         </div>
 
+        <!-- web__menu -->
+        <div class="hidden md:flex items-center justify-    w-full ">
+
+          <!-- flex__Container -->
+          <div class="md:flex items-center justify-between w-full ">
+
+            <!-- left__side -->
+            <div>
+              <ul class="flex items-center space-x-4">
+                <li class=""> <a href="#" class=" nav-web-link">Home</a></li>
+                <li class=""> <a href="#" class="nav-web-link">Shop</a></li>
+                <li class=""> <a href="#" class="nav-web-link">About Us</a></li>
+                <li class=""> <a href="#" class="nav-web-link">Contact Us</a></li>
+
+              </ul>
+            </div>
+
+            <!-- right__Side -->
+            <div>
+              <ul class="flex items-center justify-start space-x-4">
+
+                <li class=""> <a href="#" class="nav-web-link">Login/Register</a></li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- flex__Container -->
+        </div>
+        <!-- web__menu -->
+
       </div>
     </div>
+    <!-- flex__container -->
   </div>
   <!-- navigation__bar -->
 
   <!-- side__bar__container -->
-  <div class="z-50 drop-shadow-xl top-0 fixed bg-white h-screen text-white w-[50%] duration-700 transition-all  "
+  <div
+    class="z-50 drop-shadow-xl top-0 fixed bg-white h-screen text-white w-[50%] duration-700 transition-all md:hidden  "
     x-bind:class="isSideBarOpen?'left-0':'-left-[50%]'">
 
     <!-- items__container -->
@@ -310,14 +341,14 @@
 
 
   <!-- banner__section -->
-  <div class="relative h-[50vh] w-full  bg-center  bg-cover bg-no-repeat"
-    style="background-image:url('./images/landing2.jpg')">
+  <div class="relative h-[50vh] md:h-[70vh] w-full  bg-center  bg-cover bg-no-repeat"
+    style="background-image:url('./images/land.jpg')">
 
     <!-- content__section -->
-    <div class="mt-4 absolute p-4 w-[90%] space-y-4">
-      <h1 class="font-bold text-2xl text-secondary">Best Collection For Home Decoration</h1>
-      <p class=" text-white font-bold text-sm">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt saepe, asperiores expedita repellat minima
+    <div class="mt-4 absolute p-4 w-[70%] space-y-4  md:w-[40%] md:top-1/2 md:left-1/3 md:-translate-x-1/2 md:-translate-y-1/2 ">
+      <h1 class="font-bold text-2xl text-white  md:text-4xl">Best Collection For Home Decoration</h1>
+      <p class="  text-white  font-bold text-sm md:text-base  ">
+        Readily available, High Quality Furniture. Transform your home into a stylish haven with our exquisite furniture collection. From modern to classic designs
       </p>
       <button class="btn-primary rounded">Shop Now</button>
     </div>
@@ -326,13 +357,13 @@
   <!-- banner__section -->
 
   <!-- feature__section -->
-  <div class="p-4">
+  <div class="p-4 md:max-w-5xl mx-auto">
 
     <!-- grid__container -->
-    <div class="">
+    <div class="md:p-6">
 
       <!-- card__container -->
-      <div class="grid grid-cols-2 gap-3">
+      <div class="grid grid-cols-2  gap-3 md:grid-cols-3">
 
         <!-- flex__container -->
         <div class="flex items-center  p-2 gap-4 border border-primary  ">
@@ -417,10 +448,10 @@
 
 
   <!-- shop_by_categories -->
-  <div class="p-4">
-    <h1 class="font-bold text-secondary">Shop by <span class="text-primary">Category</span></h1>
+  <div class="p-4 md:max-w-5xl mx-auto md:space-y-8">
+    <h1 class="font-bold text-secondary md:text-2xl">Shop by <span class="text-primary">Category</span></h1>
     <!-- grid__container -->
-    <div class="mx-auto my-2 grid grid-cols-2 gap-3">
+    <div class="mx-auto my-2 grid grid-cols-2 gap-3 md:grid-cols-4">
 
       <template x-for="1 in 4">
 
@@ -444,11 +475,11 @@
 
 
   <!-- top__arrivals__container -->
-  <div class="p-4">
-    <h1 class="font-bold text-secondary">Top Arrivals</h1>
+  <div class="p-4 md:max-w-5xl mx-auto  md:space-y-8">
+    <h1 class="font-bold text-secondary md:text-2xl">Top Arrivals</h1>
 
     <!-- grid__container -->
-    <div class="grid grid-cols-2 gap-3">
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
 
       <template x-for="1 in 4">
 
@@ -529,27 +560,27 @@
 
 
   <!-- runner__section -->
-  <div class="relative bg-center w-full h-[12rem] bg-cover bg-no-repeat"
+  <div class="relative bg-center w-full h-[12rem] bg-cover bg-no-repeat md:max-w-5xl mx-auto  md:p-6"
     style="background-image: url('./images/landing2.jpg');">
     <div class="p-4 space-y-3 text-white  absolute top-[1%] w-[60%] font-bold ">
-      <p class="text-xs text-secondary ">ONLINE EXCLUSIVE</p>
-      <h1 class="text-2xl text-primary">15% OFF</h1>
-      <p class="font-bold">ACCENT CHAIRS, BENCHES & OTTOMANS</p>
-      <button class="px-4 py-1 text-white bg-primary rounded text-xs">Shop Now</button>
+      <p class="text-xs text-secondary md:text-base">ONLINE EXCLUSIVE</p>
+      <h1 class="text-2xl text-primary md:text-3xl">15% OFF</h1>
+      <p class="font-bold md:text-2xl">ACCENT CHAIRS, BENCHES & OTTOMANS</p>
+      <button class="px-4 py-1 text-white bg-primary rounded text-xs md:text-base">Shop Now</button>
     </div>
   </div>
   <!-- runner__section -->
 
   <!-- recommended for you__container -->
-  <div class="p-4">
-    <h1 class="font-bold text-secondary">Recommended For You</h1>
+  <div class="p-4 md:max-w-5xl mx-auto  md:space-y-8 md:mt-8">
+    <h1 class="font-bold text-secondary md:text-2xl">Recommended For You</h1>
 
     <!-- grid__container -->
-    <div class="grid grid-cols-2 gap-3">
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
 
       <template x-for="1 in 6">
-         <!-- card__container -->
-         <div class="w-full relative h-[14rem]  overflow-hidden  rounded shadow-md group hover">
+        <!-- card__container -->
+        <div class="w-full relative h-[14rem]  overflow-hidden  rounded shadow-md group hover">
           <!-- image -->
           <div class="w-full h-[50%] relative">
             <img src="./images/landing_image.jpg" class="object-center  object-cover w-full h-full absolute " alt="">
@@ -626,11 +657,12 @@
   <!-- footer__container -->
   <footer class="border-t">
     <!-- grid__container -->
-    <div class="p-4 space-y-2">
+    <div class="p-4 space-y-2 md:grid grid-cols-5  md:max-w-5xl mx-auto ">
       <!-- first -->
       <div>
-        <h1 class="font-bold text-secondary"><span class="text-primary">RAF</span>CART</h1>
-        <p class="text-xs text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius possimus suscipit provident!
+        <h1 class="font-bold text-secondary md:text-2xl"><span class="text-primary">RAF</span>CART</h1>
+        <p class="text-xs text-gray-400 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius possimus
+          suscipit provident!
         </p>
 
         <div class="flex items-center gap-2">
@@ -668,7 +700,10 @@
           <a href="#">
             <span><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                 style="fill: rgb(49, 48, 48)">
-                <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z"></path></svg>
+                <path
+                  d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zm-6.142 0H6.87v12.139H3.095z">
+                </path>
+              </svg>
             </span>
           </a>
         </div>
@@ -677,47 +712,53 @@
 
       <!-- second -->
       <div>
-        <p class="text-gray-400 text-sm ">SOLUTIONS</p>
+        <p class="text-gray-400 text-sm font-bold md:text-base">SOLUTIONS</p>
         <ul>
-          <li><a href="#" class="text-gray-400 text-xs">Marketing</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Analytics</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Commerce</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Insights</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Marketing</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Analytics</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Commerce</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Insights</a></li>
         </ul>
       </div>
 
       <!-- third   -->
       <div>
-        <p class="text-gray-400 text-sm  font-bold">SUPPORT</p>
+        <p class="text-gray-400 text-sm  font-bold md:text-base">SUPPORT</p>
         <ul>
-          <li><a href="#" class="text-gray-400 text-xs">Pricing</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Documentation</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Guides</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">API Status</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Pricing</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Documentation</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Guides</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">API Status</a></li>
         </ul>
       </div>
 
       <!-- four  -->
       <div>
-        <p class="text-gray-400 text-sm  font-bold">COMPANY</p>
+        <p class="text-gray-400 text-sm  font-bold md:text-base">COMPANY</p>
         <ul>
-          <li><a href="#" class="text-gray-400 text-xs">About</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Blog</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Jobs</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Press</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">About</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Blog</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Jobs</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Press</a></li>
         </ul>
       </div>
       <!-- fith   -->
       <div>
-        <p class="text-gray-400 text-sm font-bold">LEGAL</p>
+        <p class="text-gray-400 text-sm font-bold md:text-base">LEGAL</p>
         <ul>
-          <li><a href="#" class="text-gray-400 text-xs">Claim</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Privacy</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Policy</a></li>
-          <li><a href="#" class="text-gray-400 text-xs">Terms</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Claim</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Privacy</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Policy</a></li>
+          <li><a href="#" class="text-gray-400 text-xs md:text-sm hover:text-gray-700 duration-700 transition-all">Terms</a></li>
         </ul>
       </div>
 
+    </div>
+
+    <div class="text-center  p-2">
+      
+      <p class="text-xs text-gray-400"> &copy;<span x-text=" new Date().getFullYear()"></span> All rights reserved</p>
+      <p class="text-xs text-gray-400 italic"><a href="https://github.com/mugerwa96">powered by mugerwa</a></p>
     </div>
   </footer>
   <!-- footer__container -->

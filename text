@@ -1,12 +1,29 @@
-<!-- banner__section -->
-<div class="relative h-64 w-full bg-cover bg-no-repeat" style="background-image:url('./images/landing2.jpg')">
+  <!-- web__menu -->
+  <div class="hidden md:flex items-center justify-between  w-full ">
+        
+    <!-- flex__Container -->
+  <div class="md:flex items-center justify-between w-full ">
 
-  <!-- content__section -->
-  <div class="mt-4 absolute p-4 w-[90%]">
-    <h1 class="font-bold text-2xl text-secondary">Best Collection For Home  Decoration</h1>
-    <p class=" text-secondary text-sm">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt saepe, asperiores expedita repellat minima </p>
+    <!-- left__side -->
+    <div>
+      <ul class="flex items-center space-x-4">
+        <li class=""> <a href="#" class=" nav-web-link">Home</a></li>
+        <li class=""> <a href="#" class="nav-web-link">Shop</a></li>
+        <li class=""> <a href="#" class="nav-web-link">About Us</a></li>
+        <li class=""> <a href="#" class="nav-web-link">Contact Us</a></li>
+      
+      </ul>
+    </div>
+
+    <!-- right__Side -->
+    <div>
+      <ul class="flex items-center space-x-4">
+       
+        <li class=""> <a href="#" class="nav-web-link">Login/Register</a></li>
+      </ul>
+    </div>
+
   </div>
-  
-  </div>
-  <!-- banner__section -->
+    <!-- flex__Container -->
+</div>
+<!-- web__menu -->

@@ -10,3 +10,6 @@
 .btn-primary{
     @apply bg-primary text-white border border-primary px-4 py-2 flex space-x-2 items-center
 }
+.nav-web-link{
+    @apply font-medium text-sm hover:text-primary duration-700 transition-all
+}
