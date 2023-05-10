@@ -21,7 +21,7 @@
 
 <body class="font-roboto bg-gray-50" x-data="{
   isSideBarOpen:false,
-  isCategoriesOpen:false
+  isCategoriesOpen:false,
 }">
     <header>
         <!-- top__nav__container -->
@@ -163,7 +163,7 @@
                         <span class="text-xs md:text-base">All Categories</span>
                     </button>
                     <!-- all__categories -->
-                    <div class="z-10 absolute top-10 bg-white shadow" x-show="isCategoriesOpen" x-transition>
+                    <div class="z-10 absolute top-10 bg-white shadow" x-show="isCategoriesOpen" x-transition x-cloak>
                         <ul class="p-3">
                             <li><a href="#" class="nav-link">Shoes</a></li>
                             <li><a href="#" class="nav-link">Men Wear</a></li>
@@ -241,7 +241,7 @@
 
         <!-- side__bar__container -->
         <div class="z-50 drop-shadow-xl top-0 fixed bg-white h-screen text-white w-[50%] duration-700 transition-all md:hidden  "
-            x-bind:class="isSideBarOpen?'left-0':'-left-[50%]'">
+            x-bind:class="isSideBarOpen?'left-0':'-left-[50%]' " x-cloak>
 
             <!-- items__container -->
             <div class="p-3 ">
@@ -347,7 +347,404 @@
         <!-- side__bar__container -->
     </header>
 
-        <p>SHOP</p>
+
+    <!-- main__content__section -->
+    <div class="p-4 md:max-w-5xl mx-auto  md:space-y-8 md:my-8">
+
+
+        <!-- flex__container -->
+        <div class="md:flex gap-1 md:items-start">
+
+            <!-- left__side -->
+            <div class="md:w-[30%]">
+                    
+                    <!-- filter__side__bar -->
+                    <div class="hidden md:flex   z-20  w-[80%] drop-shadow-md bg-white overflow-hidden ">
+                        <div class="p-4 space-y-5">
+
+                            <!-- Categories -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm ">CATEGORIES</h1>
+                                <!-- check -->
+                                <template x-for="1 in 3">
+
+                                    <div class="mb-1">
+                                        <!-- flex__Container -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- left__side -->
+                                            <div>
+                                                <input type="checkbox" name="" id="bedroom"
+                                                    class="text-xs focus:ring-0 border-primary checked:bg-primary ">
+                                                <label for="bedroom" class="text-xs md:text-sm">Bedroom</label>
+                                            </div>
+                                            <!-- right__side -->
+                                            <div>
+                                                <span class="text-secondary text-xs ">(12)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <!-- Brand -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm ">BRAND</h1>
+                                <!-- check -->
+                                <template x-for="1 in 3">
+
+                                    <div class="mb-2">
+                                        <!-- flex__Container -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- left__side -->
+                                            <div>
+                                                <input type="checkbox" name="" id="bedroom"
+                                                    class="text-xs focus:ring-0 border-primary checked:bg-primary ">
+                                                <label for="bedroom" class="text-xs md:text-sm">Dominik</label>
+                                            </div>
+                                            <!-- right__side -->
+                                            <div>
+                                                <span class="text-secondary text-xs">(2)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <!-- PRICE -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm ">PRICE</h1>
+
+                                <div class=" flex justify-between mb-2 ">
+                                    <input type="text" name="" class="w-[40%] p-1 text-xs md:text-sm border-gray-400 rounded focus:ring-0 focus:border-primary"
+                                        placeholder ="min" id="">
+                                    <span class="text-gray-300">-</span>
+                                    <input type="text" name="" class="w-[40%] p-1 text-xs  md:text-sm border-gray-300 rounded focus:ring-0 focus:border-primary"
+                                        placeholder ="max" id="">
+
+                                </div>
+
+                            </div>
+
+                            <!-- SIZE -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm md:text-base">SIZE</h1>
+                                <!-- flex__container -->
+                                <div class="flex items-center gap-3">
+
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="xs">
+                                        <label for="xs" class="text-xs font-bold md:text-sm">XS</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="md">
+                                        <label for="md" class="text-xs font-bold md:text-sm">MD</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="xl">
+                                        <label for="xl" class="text-xs font-bold md:text-sm">XL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="xxl">
+                                        <label for="xxl" class="text-xs font-bold md:text-sm">XXL</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- filter__side__bar -->
+            </div>
+
+
+
+            <!-- right__side -->
+            <div class="md:w-[70%]">
+
+                <!-- header__section -->
+                <div class="relative" x-data="{isFilterOpen:false}">
+                    <!-- flex__container -->
+                    <div class="flex justify-between items-start my-3">
+
+                        <!-- left__side -->
+                        <div>
+                            <select name="" id=""
+                                class=" text-xs md:text-sm rounded border border-primary focus:outline-none focus:ring-0 focus:border-primary ">
+                                <option value="">Default sorting</option>
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                        </div>
+
+                        <!-- middle -->
+                        <div>
+
+                            <!-- side__bar__filter -->
+                            <div class="md:hidden">
+                                <template x-if="!isFilterOpen">
+
+                                    <span class="text-secondary duration-700 transition-all hover:text-primary"
+                                        @click="isFilterOpen=!isFilterOpen">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                                        </svg>
+
+                                    </span>
+                                </template>
+                                <template x-if="isFilterOpen">
+
+                                    <span class="text-secondary duration-700 transition-all hover:text-primary"
+                                        @click="isFilterOpen=!isFilterOpen">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+
+
+                                    </span>
+                                </template>
+                            </div>
+                            <!-- side__bar__filter -->
+                        </div>
+
+                        <!-- right__side -->
+                        <div class="flex items-center gap-2">
+                            <!-- grid -->
+                            <div
+                                class="bg-primary relative rounded p-2 w-7 h-7 hover:bg-primary/75 duration-700 transition-all ">
+                                <span class="absolute top-1/2 left-1/2 text-white -translate-x-1/2 -translate-y-1/2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                                    </svg>
+
+                                </span>
+                            </div>
+                            <!-- list -->
+                            <div
+                                class="border border-secondary relative rounded p-2 w-7 h-7 duration-700 transition-all group hover:bg-primary hover:border-none  ">
+                                <span class="absolute top-1/2 left-1/2 text-white -translate-x-1/2 -translate-y-1/2 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-5 h-5 text-secondary group-hover:text-white ">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- filter__side__bar -->
+                    <div class="md:hidden left-0 absolute  z-20  w-[60%] drop-shadow-md bg-white overflow-hidden duration-1000 transition-all "
+                        :class="isFilterOpen?'translate-x-0':'-translate-x-[200%]'" x-cloak>
+                        <div class="p-3 space-y-3">
+
+                            <!-- Categories -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm">CATEGORIES</h1>
+                                <!-- check -->
+                                <template x-for="1 in 3">
+
+                                    <div class="mb-1">
+                                        <!-- flex__Container -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- left__side -->
+                                            <div>
+                                                <input type="checkbox" name="" id="bedroom"
+                                                    class="text-xs focus:ring-0 border-primary checked:bg-primary ">
+                                                <label for="bedroom" class="text-xs">Bedroom</label>
+                                            </div>
+                                            <!-- right__side -->
+                                            <div>
+                                                <span class="text-secondary text-xs">(12)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <!-- Brand -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm">BRAND</h1>
+                                <!-- check -->
+                                <template x-for="1 in 3">
+
+                                    <div class="mb-2">
+                                        <!-- flex__Container -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- left__side -->
+                                            <div>
+                                                <input type="checkbox" name="" id="bedroom"
+                                                    class="text-xs focus:ring-0 border-primary checked:bg-primary ">
+                                                <label for="bedroom" class="text-xs">Dominik</label>
+                                            </div>
+                                            <!-- right__side -->
+                                            <div>
+                                                <span class="text-secondary text-xs">(2)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+
+                            <!-- PRICE -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm">PRICE</h1>
+
+                                <div class=" flex justify-between mb-2 ">
+                                    <input type="text" name="" class="w-[40%] p-1 text-xs border-gray-400 rounded"
+                                        value="min" id="">
+                                    <span class="text-gray-300">-</span>
+                                    <input type="text" name="" class="w-[40%] p-1 text-xs border-gray-300 rounded"
+                                        value="max" id="">
+
+                                </div>
+
+                            </div>
+
+                            <!-- SIZE -->
+                            <div class="border-b">
+                                <h1 class="font-bold text-secondary text-sm">SIZE</h1>
+                                <!-- flex__container -->
+                                <div class="flex items-center gap-2">
+
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="xs">
+                                        <label for="xs" class="text-xs font-bold">XS</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="md">
+                                        <label for="md" class="text-xs font-bold">MD</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="xl">
+                                        <label for="xl" class="text-xs font-bold">XL</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name=""
+                                            class="relative checked:bg-primary w-4 h-4 rounded focus:ring-0 focus:border-none"
+                                            id="xxl">
+                                        <label for="xxl" class="text-xs font-bold">XXL</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- filter__side__bar -->
+
+                </div>
+                <!-- header__section -->
+
+                <!-- grid__container -->
+                <div class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 ">
+
+                    <template x-for="1 in 6">
+                        <!-- card__container -->
+                        <div class="w-full relative h-[14rem]  overflow-hidden  rounded shadow-md group hover">
+                            <!-- image -->
+                            <div class="w-full h-[50%] relative">
+                                <img src="./images/landing_image.jpg"
+                                    class="object-center  object-cover w-full h-full absolute " alt="">
+
+                                <!-- wish__overlagy -->
+                                <div
+                                    class="w-full h-full absolute bg-black/40 justify-center items-center gap-2 hidden group-hover:flex">
+
+                                    <div
+                                        class=" cursor-pointer w-7 h-7 flex justify-center items-center rounded-full bg-primary/75">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class="text-white  font-bold w-4 h-4">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                            </svg>
+
+                                        </span>
+                                    </div>
+                                    <!-- search -->
+                                    <div
+                                        class=" cursor-pointer w-7 h-7 flex justify-center items-center rounded-full bg-black/75">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor"
+                                                class=" text-white font-bold w-4 h-4">
+
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                                            </svg>
+
+
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- content -->
+                            <div class="p-3 ">
+                                <p class="text-secondary font-bold ">Guyer Chair</p>
+                                <div>
+                                    <p class=" ">
+                                        <span class="text-primary font-bold ">$45.6</span>
+                                        <span class="text-gray-400 ml-2 text-sm font-medium  line-through">$12.34</span>
+                                    </p>
+                                    <p class="flex">
+                                        <!-- stars -->
+                                        <template x-for="1 in 4">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    fill="currentColor" class="text-yellow-600 w-3 h-3">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </template>
+                                        <small class="text-xs text-gray-400 ml-2">(150)</small>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="btn-primary flex items-center  justify-center text-xs w-full absolute bottom-0 hover:bg-transparent  hover:border-primary hover:text-primary">Add
+                                To
+                                Cart
+                            </button>
+                        </div>
+                        <!-- card__container -->
+                    </template>
+                </div>
+                <!-- grid__container -->
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- main__content__section -->
+
+
     <!-- footer__container -->
     <footer class="border-t">
         <!-- grid__container -->
@@ -493,4 +890,3 @@
 </body>
 
 </html>
-
