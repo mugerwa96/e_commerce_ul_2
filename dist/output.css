@@ -794,6 +794,11 @@ select{
   margin-bottom: 3rem;
 }
 
+.my-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .-ml-1{
   margin-left: -0.25rem;
 }
@@ -836,6 +841,18 @@ select{
 
 .mt-3{
   margin-top: 0.75rem;
+}
+
+.mb-8{
+  margin-bottom: 2rem;
+}
+
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
+.mb-\[3rem\]{
+  margin-bottom: 3rem;
 }
 
 .flex{
@@ -1570,6 +1587,10 @@ select{
 
   .md\:mt-8{
     margin-top: 2rem;
+  }
+
+  .md\:mb-0{
+    margin-bottom: 0px;
   }
 
   .md\:flex{
