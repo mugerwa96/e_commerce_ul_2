@@ -13,3 +13,6 @@
 .nav-web-link{
     @apply font-medium text-sm hover:text-primary duration-700 transition-all
 }
+.form-class{
+    @apply w-full p-1 my-2 border-gray-200 rounded  focus:ring-0 focus:border-gray-300 placeholder:text-xs
+}
